@@ -11,7 +11,8 @@ public class Booster : MonoBehaviour
     private Rigidbody rocketBody;
     private AudioSource thrustSound;
 
-    public float rotationSpeed;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] float forcePower;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +30,30 @@ public class Booster : MonoBehaviour
 
     void ProcessInput()
     {
+        Thrust();
+        Rotate();
+    }
+
+    private void Rotate()
+    {
+        rocketBody.freezeRotation = true;
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(-Vector3.forward, rotationSpeed * Time.deltaTime);
+        }
+
+        rocketBody.freezeRotation = false;
+    }
+
+    private void Thrust()
+    {
         if (Input.GetKey(KeyCode.Space))
         {
-            rocketBody.AddRelativeForce(Vector3.up);
+            rocketBody.AddRelativeForce(Vector3.up * forcePower);
             if (!thrustSound.isPlaying)
             {
                 thrustSound.Play();
@@ -41,18 +63,5 @@ public class Booster : MonoBehaviour
         {
             thrustSound.Stop();
         }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(-Vector3.forward, rotationSpeed * Time.deltaTime);
-        }
     }
-    
-    
-    
-    
 }

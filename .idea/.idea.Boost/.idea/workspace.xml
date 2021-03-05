@@ -63,7 +63,7 @@
       <option name="presentableId" value="Default" />
       <updated>1614885257376</updated>
       <workItem from="1614885261822" duration="450000" />
-      <workItem from="1614930184269" duration="3182000" />
+      <workItem from="1614930184269" duration="6318000" />
     </task>
     <servers />
   </component>
@@ -74,5 +74,11 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="498" height="406" key="SwitcherDM" timestamp="1614946052548">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="406" key="SwitcherDM/-1280.0.1280.680/0.0.1920.1040@0.0.1920.1040" timestamp="1614946052548" />
   </component>
 </project>
